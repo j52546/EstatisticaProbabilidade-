@@ -25,6 +25,10 @@
     <style>
         table, th, td {
             border: 1px solid black;
+            padding: 10px
+        }
+        td {
+          width: 20%
         }
     </style>
     
@@ -162,11 +166,12 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <h2>Project Title</h2>
-                 <form>
-                  <label>Número de elementos</label> <input id="n" type="text">
-                  <input id="number" type="submit" value="Calcular">
-                  </form>
+                  <h2>Project Title</h2><hr />
+                 
+                  <label>Número de elementos</label>
+                  <input class="form-control entrada" id="number" type="number" min="0" max="10" value="Calcular"></input>
+                  <br>
+                <button class="btn btn-primary myBtn" >Gerar</button>
                   <br><br>
                   <table>
                       <thead>
@@ -178,11 +183,11 @@
                               <th>Yi²</th>
                           </tr>
                       </thead>
-                      <tbody>
-                      <td><input/></td>
-                      <td></td>
+                      <tbody class="body-table">
+                  
                       </tbody>
                   </table>
+                  <button class="btn btn-primary btnCalcular" >Calcular</button>
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                     Close</button>
@@ -258,6 +263,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    
 
   </body>
 
