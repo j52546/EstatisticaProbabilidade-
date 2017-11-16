@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="js/modaMediaMediana.js"></script>
 
     <title>Estatística e Probabilidade</title>
 
@@ -20,7 +21,13 @@
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
-
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    
   </head>
 
   <body id="page-top">
@@ -140,7 +147,8 @@
         <i class="fa fa-chevron-up"></i>
       </a>
     </div>
-
+    
+    
     <!-- Página cabana>-->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -155,6 +163,26 @@
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <h2>Project Title</h2>
+                 <form>
+                  <label>Número de elementos</label> <input id="n" type="text">
+                  <input id="number" type="submit" value="Calcular">
+                  </form>
+                  <br><br>
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Xi</th>
+                              <th>Yi</th>
+                              <th>XiYi</th>
+                              <th>Xi²</th>
+                              <th>Yi²</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      <td><input/></td>
+                      <td></td>
+                      </tbody>
+                  </table>
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                     Close</button>
@@ -165,7 +193,8 @@
         </div>
       </div>
     </div>
-    
+       
+
     <!--Página Bolo>-->
    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
