@@ -1,4 +1,4 @@
-        function criarTabela(){
+    /*    function criarTabela(){
            var numero = document.getElementById("n").value;
            var i;
            var linha = document.createElement("tr");
@@ -10,7 +10,7 @@
         document.getElementById("number").onclick = function numero(e){
            
            e.preventDefault();
-        }
+        }*/
  
  $(function(){
     $('.myBtn').on('click', function(){
@@ -19,21 +19,21 @@
         for(let i = 0; i < qtd; i++) {
             let html = `<tr>
                 <td class="xi">
-                    <input class="form-control" type="number"/>
-                </td>
-                <td class="yi">
-                    <input class="form-control" type="number"/>
-                 </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-                
-                </td>
-            </tr>`
+                        <input class="form-control ent" type="number"/>
+                    </td>
+                    <td class="yi">
+                        <input class="form-control ent" type="number"/>
+                     </td>
+                    <td class="xifi" id="xifi${i}">
+    
+                    </td>
+                    <td class="xi2" id="xi2${i}">
+    
+                    </td>
+                    <td class="yi2" id="yi2${i}">
+                    
+                    </td>
+                </tr>`
             $('.body-table').append(html)
         }
     } else {
@@ -49,10 +49,10 @@
             for(let i = 0; i < qtd; i++) {
                 let html = `<tr>
                     <td class="xi">
-                        <input class="form-control" type="number"/>
+                        <input class="form-control ent" type="number"/>
                     </td>
                     <td class="yi">
-                        <input class="form-control" type="number"/>
+                        <input class="form-control ent" type="number"/>
                      </td>
                     <td class="xifi" id="xifi${i}">
     
@@ -88,9 +88,8 @@
            $('#xifi' + i ).html(xifi)
            $('#xi2' + i ).html(xi2)
            $('#yi2' + i ).html(yi2)
-           
-           
        }
-
     })
- })
+    
+  
+    })
