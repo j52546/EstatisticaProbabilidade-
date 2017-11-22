@@ -77,7 +77,9 @@
         let yiElement = $('.yi input')
         let xi = Array()
         let yi = Array()
-        let html = `<tr>
+        
+        if($('.sXi').length == 0) {
+            let html = `<tr>
             <td class="sXi" id="sXi">
             
             </td>
@@ -87,6 +89,7 @@
                 <td class="sYi2" id="sYi2"></td>
             </tr>`
             $('.body-table').append(html)
+        }
         for(let i = 0; i < $('.xi input').length; i++) {
             xi.push(xiElement[i].value)
             yi.push(yiElement[i].value)
@@ -96,7 +99,7 @@
            let xifi = `<span>${xi[i] * yi[i]}</span>`
            let xi2 = `<span>${Math.pow(xi[i], 2)}</span>`
            let yi2 = `<span>${Math.pow(yi[i], 2)}</span>`
-           cont += `<span>${xi[i]}</span>`
+           cont += Number(xi[i])
            $('#xifi' + i ).html(xifi)
            $('#xi2' + i ).html(xi2)
            $('#yi2' + i ).html(yi2)
