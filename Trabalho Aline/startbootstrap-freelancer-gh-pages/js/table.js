@@ -20,7 +20,9 @@
   
 
     $('.myBtn').on('click', function(){
-        let qtd = $('.entrada').val()
+
+     if($('.campos').length == 0){   
+         let qtd = $('.entrada').val()
         if(qtd !== '' && qtd <= 10 && qtd > 0){
         for(let i = 0; i < qtd; i++) {
             let html = `<tr class="campos">
@@ -44,12 +46,12 @@
         }
     } else {
         alert('Quantidade de coluna inválida')
-    }
+    }}
     })
 
 
     $('.entrada').on('keyup', function(e) {
-        if(e.keyCode == 13) {
+        if(e.keyCode == 13 && $('.campos').length == 0) {
             let qtd = $('.entrada').val()
             if(qtd !== '' && qtd <= 10 && qtd > 0){
             for(let i = 0; i < qtd; i++) {
