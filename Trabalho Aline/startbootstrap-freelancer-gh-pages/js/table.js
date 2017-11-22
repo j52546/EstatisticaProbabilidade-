@@ -13,11 +13,17 @@
         }*/
  
  $(function(){
+    $('.fechar').on('click', function() {
+        $('.entrada').val('')
+        $('.campos').remove()
+    })
+  
+
     $('.myBtn').on('click', function(){
         let qtd = $('.entrada').val()
         if(qtd !== '' && qtd <= 10 && qtd > 0){
         for(let i = 0; i < qtd; i++) {
-            let html = `<tr>
+            let html = `<tr class="campos">
                 <td class="xi">
                         <input class="form-control ent" type="number"/>
                     </td>
@@ -47,7 +53,7 @@
             let qtd = $('.entrada').val()
             if(qtd !== '' && qtd <= 10 && qtd > 0){
             for(let i = 0; i < qtd; i++) {
-                let html = `<tr>
+                let html = `<tr class="campos">
                     <td class="xi">
                         <input class="form-control ent" type="number"/>
                     </td>
