@@ -13,18 +13,27 @@
         }*/
  
  $(function(){
+
+    $('.voltar').click(function(){
+        $('.btnCalcular').hide()
+    })
+     $('.btnCalcular').hide()
     $('.fechar').on('click', function() {
         $('.entrada').val('')
+        $('.retaAjustada').remove()
         $('.campos').remove()
+        $('.resultadoSomatorio').remove()
+        $('.btnCalcular').hide()
+       
     })
   
     /*================ GERAR ==================================*/
     $('.myBtn').on('click', function(){
-
+    $('.btnCalcular').show('fast')
      if($('.campos').length == 0){   
          let qtd = $('.entrada').val()
         if(qtd !== '' && qtd <= 10 && qtd > 0){
-             let html = `<tr>
+             let html = `<tr class="retaAjustada">
                               <th>Xi</th>
                               <th>Yi</th>
                               <th>XiYi</th>
@@ -59,10 +68,12 @@
 
 
     $('.entrada').on('keyup', function(e) {
+        
         if(e.keyCode == 13 && $('.campos').length == 0) {
+            $('.btnCalcular').show('fast')
             let qtd = $('.entrada').val()
             if(qtd !== '' && qtd <= 10 && qtd > 0){
-                 let html = `<tr>
+                 let html = `<tr class="retaAjustada">
                               <th>Xi</th>
                               <th>Yi</th>
                               <th>XiYi</th>
@@ -104,7 +115,7 @@
         let yi = Array()
         
         if($('.sXi').length == 0) {
-            let html = `<tr>
+            let html = `<tr class="resultadoSomatorio">
                 <td class="sXi" id="sXi"></td>
                 <td class="sYi" id="sYi"></td>
                 <td class="sXiYi" id="sXiYi"></td>
@@ -151,7 +162,7 @@
        
        if($('.a').length == 0){
             let html = 
-                `<tr>
+                `<tr class="retaAjustada">
                     <th>A</th>
                     <th>X/N</th>
                     <th>Y/N</th>
@@ -160,7 +171,7 @@
              $('.cabecalho1').append(html)
                
             let html1 =
-                `<tr>
+                `<tr class="retaAjustada">
                     <td class="a" id="a"></td>
                     <td class="x_" id="x_"></td>
                     <td class="y_" id="y_"></td>
@@ -173,10 +184,10 @@
             let Y_ = Number(contYi/n)
             let B = Number(Y_ - A*X_)
             
-            let sA = `<span>${A}</span>`
-            let sX_ = `<span>${X_}</span>`
-            let sY_ = `<span>${Y_}</span>`
-            let sB = `<span>${B}</span>`
+            let sA = `<span>${A.toFixed(2)}</span>`
+            let sX_ = `<span>${X_.toFixed(2)}</span>`
+            let sY_ = `<span>${Y_.toFixed(2)}</span>`
+            let sB = `<span>${B.toFixed(2)}</span>`
             $('#a').html(sA)      
             $('#x_').html(sX_)
             $('#y_').html(sY_)
