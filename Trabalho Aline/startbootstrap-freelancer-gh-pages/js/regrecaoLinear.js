@@ -13,7 +13,8 @@
         }*/
  
  $(function(){
-
+    
+    /*================== FUNÇÃO PARA ESCONDER E REMOVER BOTÕES E LINHAS ==========*/
     $('.voltar').click(function(){
         $('.btnCalcular').hide()
     })
@@ -27,7 +28,7 @@
        
     })
   
-    /*================ GERAR ==================================*/
+    /*================ CRIAÇÃO TABELA GERAR ==================================*/
     $('.myBtn').on('click', function(){
     $('.btnCalcular').show('fast')
      if($('.campos').length == 0){   
@@ -66,7 +67,7 @@
     }}
     })
 
-
+    /*======================== CRIAÇÃO TABELA ENTER =====================*/
     $('.entrada').on('keyup', function(e) {
         
         if(e.keyCode == 13 && $('.campos').length == 0) {
@@ -107,7 +108,7 @@
         }
     })
     
-    /*================= CALCULO ========================*/
+    /*================= TABELA SOMATÓRIA ========================*/
     $('.btnCalcular').on('click', function() {
         let xiElement = $('.xi input')
         let yiElement = $('.yi input')
@@ -129,6 +130,8 @@
             xi.push(xiElement[i].value)
             yi.push(yiElement[i].value)
         }
+        
+        /*=============== CALCULOS ===================*/
         let n=0
         let contXi=0
         let contYi=0
@@ -159,7 +162,8 @@
        $('#sXiYi').html(somaXiYi)
        $('#sXi2').html(somaXi2)
        $('#sYi2').html(somaYi2)
-       
+      
+      /*=============== CRIAÇÃO TABELA DE RESULTADOS ================*/ 
        if($('.a').length == 0){
             let html = 
                 `<tr class="retaAjustada">
@@ -178,7 +182,8 @@
                     <td class="b" id="b"></td>
                 </tr>`
             $('.body-table1').append(html1)
-            
+        
+           /*=================== CALCULOS ===================================*/
             let A = Number((contXiYi-(contXi*contYi)) / ((n*contXi2) - (Math.pow(contXi,2))))
             let X_ = Number(contXi/n)
             let Y_ = Number(contYi/n)
