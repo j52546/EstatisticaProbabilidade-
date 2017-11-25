@@ -20,7 +20,7 @@ $(function(){
              let n = $('.entrada1').val()
              if(n !== '' && n <= 10 && n > 0){
                  let html = `<tr class="retaAjustada1">
-                                <th>QTD</th>
+                                <th>Elementos</th>
                                 <th>Fa</th>
                                 <th>Fr</th>
                                 <th>Fr(%)</th>
@@ -30,22 +30,22 @@ $(function(){
                  $('.cabecalho2').append(html)
                  for(let i=0; i<n; i++){
                      let html1 = `<tr class="campos1">
-                                    <td class ="qtd">
-                                        <input class="form-control ent1" type="number"/>
+                                    <td class ="elementos">
+                                        <input class="form-control ent1"/>
                                     </td>
                                     <td class ="f">
                                         <input class="form-control ent1" type="number"/>
                                     </td>
-                                    <td class ="fr" id ="fr">
+                                   <td class="fr" id ="fr${i}">
                      
                                     </td>
-                                    <td class ="frPorc" id ="frPorc">
+                                    <td class="frPorc" id="frPorc${i}">
                      
                                     </td>
-                                    <td class ="fac" id ="fac">
+                                    <td class="fac" id="fac${i}">
                      
                                     </td>
-                                    <td class ="fad" id ="fad">
+                                    <td class="fad" id="fad${i}">
                      
                                     </td>
                                   </tr>`
@@ -63,11 +63,10 @@ $(function(){
      $('.entrada1').on('keyup',function(e){
          if(e.keyCode == 13 && $('.campos1').length == 0){
               $('.btnCalcular1').show('fast')
-         if($('.campos1').length == 0){
              let n = $('.entrada1').val()
              if(n !== '' && n <= 10 && n > 0){
                  let html = `<tr class="retaAjustada1">
-                                <th>QTD</th>
+                                <th>Elementos</th>
                                 <th>Fa</th>
                                 <th>Fr</th>
                                 <th>Fr(%)</th>
@@ -77,22 +76,22 @@ $(function(){
                  $('.cabecalho2').append(html)
                  for(let i=0; i<n; i++){
                      let html1 = `<tr class="campos1">
-                                    <td class ="qtd">
+                                    <td class="elementos">
                                         <input class="form-control ent1" type="number"/>
                                     </td>
-                                    <td class ="f">
+                                    <td class="f">
                                         <input class="form-control ent1" type="number"/>
                                     </td>
-                                    <td class ="fr" id ="fr">
+                                    <td class="fr" id="fr${i}">
                      
                                     </td>
-                                    <td class ="frPorc" id ="frPorc">
+                                    <td class="frPorc" id="frPorc${i}">
                      
                                     </td>
-                                    <td class ="fac" id ="fac">
+                                    <td class="fac" id="fac${i}">
                      
                                     </td>
-                                    <td class ="fad" id ="fad">
+                                    <td class="fad" id="fad${i}">
                      
                                     </td>
                                   </tr>`
@@ -104,7 +103,67 @@ $(function(){
                      alert('Quantidade de coluna inválida')
             }
          }
-         }
      })
+     
+      /*================= TABELA SOMATÓRIA ========================*/
+      $('.btnCalcular1').on('click',function(){
+          let fElement = $('.f input')
+          let fa = Array()
+          
+          if($('.sF').length == 0){
+              let html = `<tr class="resultadoSomatorio1">
+                                <td class="sElementos" id="sElementos">Total</td>
+                                <td class="sF" id="sF"></td>
+                                <td class="sFr" id="sFr"></td>
+                                <td class="sFrPorc" id="sFrPorc"></td>
+                                <td class="sFac" id="sFac"> ----- </td>
+                                <td class="sFad" id="sFad"> ----- </td>
+                          </tr>`
+              $('.body-table2').append(html)
+          }
+          
+          for(let i=0; i<$('.f input').length; i++){
+              fa.push(fElement[i].value)
+          }
+          
+        /*=============== CALCULOS ===================*/
+        let contF = 0
+        let contFr = 0
+        let contFrPorc = 0
+        
+        /*======================== Somatorio de FA e FAC ======================*/
+        for(let i=0; i<fa.length; i++){
+            contF += Number(fa[i])
+            let fac = `<span>${contF}</span>`
+            $('#fac' + i).html(fac)
+        }  
+        let somaF = `<span><b>${contF}</b></span>`
+        $('#sF').html(somaF)
+        
+        /*================ FAD  FR e FR(%) e Somatórios ===============================*/
+        let contF1 = contF
+        for(let i=0; i<fa.length; i++){
+//            if(i == 0){
+//                 let fad = `<span>${contF1}</span>`
+//             }
+//            if(i > 0){
+            let fad = `<span>${contF1 - fa[i-1]}</span>`
+            
+            let fr = `<span>${fa[i] / contF}</span>`
+            
+          let frPorc = `<span>${100}</span>`
+            contFr += Number(fa[i] / contF)
+          contFrPorc += Number(frPorc[i])
+            $('#fad' + i).html(fad)
+            $('#fr' + i).html(fr)
+            $('#frPorc' + i).html(frPorc)
+        }
+        let somaFr = `<span><b>${contFr}</b></span>`
+        let somaFrPorc = `<span><b>${contFrPorc}</b></span>`
+        $('#sFr').html(somaFr)
+        $('#sFrPorc').html(somaFrPorc)
+      
+      
+      })
 })
 
