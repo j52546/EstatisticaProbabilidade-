@@ -159,12 +159,12 @@ $(function(){
                 contFrPorc += Number(frPorc)
                
                 $('#fr' + i).html(fr.toFixed(2))
-                $('#frPorc' + i).html(frPorc.toFixed(2))
+                $('#frPorc' + i).html(frPorc.toFixed(2) + ' %')
             
              
     }
         let somaFr = `<span><b>${contFr}</b></span>`
-        let somaFrPorc = `<span><b>${Math.ceil(contFrPorc)}</b></span>`
+        let somaFrPorc = `<span><b>${Math.ceil(contFrPorc)} %</b></span>`
         $('#sFr').html(somaFr)
         $('#sFrPorc').html(somaFrPorc)
       
