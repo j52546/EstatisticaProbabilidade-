@@ -32,6 +32,21 @@
         td {
           width: 20%
         }
+
+        .entradaStyle {
+          width: 30%;
+          border: 0px;
+          outline: none;
+        }
+
+        .direita {
+          text-align: right
+        }
+
+      
+
+     
+    
     </style>
     
   </head>
@@ -249,7 +264,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
+          <div class="close-modal fecharIntervalo" data-dismiss="modal">
             <div class="lr">
               <div class="rl"></div>
             </div>
@@ -258,10 +273,39 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <h2>Project Title</h2>
+                  <h2>Média Aritmética</h2><hr />
+                  <input type="number" max="10" min="0" class="form-control entradaIntervalo"/>
+                  <button class="btn btn-primary gerarIntervalos" style="margin: 10px 0px">Gerar</button>
+
+                  
+                  <table class="tabelaIntervalo">
+                      <thead>
+                          <th>Intervalos</th>
+                          <th>XI</th>
+                          <th>FI</th>
+                          <th>XI*FI</th>
+                          <th>Fac</th>
+                          
+                          
+                      </thead>
+                      <tbody class="corpoIntervalo">
+                        
+                      </tbody>
+                    </table>
+  
+  
+  
+                    <button class="btn btn-primary btnCalcularTeste" >Calcular</button>
+  
+                  
+                  
+                  
+                  
+                  
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
-                    Close</button>
+                    VOltar</button>
+                    <button  class="btn btn-warning limpar">Limpar</button>
                 </div>
               </div>
             </div>
@@ -287,6 +331,9 @@
     <script type="text/javascript" src="js/regrecaoLinear.js"></script>
     <script type="text/javascript" src="js/distribuicaoDeFrequencia.js"></script>
 
+    <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript" src="jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/intervalo.js"></script>
   </body>
 
 </html>
