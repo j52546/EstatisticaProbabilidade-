@@ -90,7 +90,7 @@
                     <td class="yi">
                         <input class="form-control ent" type="number"/>
                      </td>
-                    <td class="xifi" id="xifi${i}">
+                    <td class="xifi" id="xiyi${i}">
     
                     </td>
                     <td class="xi2" id="xi2${i}">

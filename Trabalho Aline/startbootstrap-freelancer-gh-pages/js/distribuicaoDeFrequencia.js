@@ -142,24 +142,29 @@ $(function(){
         
         /*================ FAD  FR e FR(%) e Somatórios ===============================*/
         let contF1 = contF
+        
         for(let i=0; i<fa.length; i++){
-//            if(i == 0){
-//                 let fad = `<span>${contF1}</span>`
-//             }
-//            if(i > 0){
-            let fad = `<span>${contF1 - fa[i-1]}</span>`
+            if(i == 0){
+                 let fad = `<span>${contF1}</span>`
+                 $('#fad' + i).html(fad)
+             }
+             else {
+                contF1 -= fa[i-1]
+                let fad = `<span>${contF1}</span>`
+                $('#fad' + i).html(fad)
+             }
+                let fr = fa[i] / contF
+                let frPorc = fr * 100
+                contFr += Number(fa[i] / contF)
+                contFrPorc += Number(frPorc)
+               
+                $('#fr' + i).html(fr.toFixed(2))
+                $('#frPorc' + i).html(frPorc.toFixed(2))
             
-            let fr = `<span>${fa[i] / contF}</span>`
-            
-          let frPorc = `<span>${100}</span>`
-            contFr += Number(fa[i] / contF)
-          contFrPorc += Number(frPorc[i])
-            $('#fad' + i).html(fad)
-            $('#fr' + i).html(fr)
-            $('#frPorc' + i).html(frPorc)
-        }
+             
+    }
         let somaFr = `<span><b>${contFr}</b></span>`
-        let somaFrPorc = `<span><b>${contFrPorc}</b></span>`
+        let somaFrPorc = `<span><b>${Math.ceil(contFrPorc)}</b></span>`
         $('#sFr').html(somaFr)
         $('#sFrPorc').html(somaFrPorc)
       
