@@ -94,6 +94,8 @@
             <h3 class="text-center"><a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">Regressão Linear</a></h3><br/>
             <h3 class="text-center"><a class="portfolio-link" href="#portfolioModal2" data-toggle="modal">Distribuição de Frequência</a></h3><br/>
             <h3 class="text-center"><a class="portfolio-link" href="#portfolioModal3" data-toggle="modal">Média Aritmética</a></h3><br/>
+            <h3 class="text-center"><a class="portfolio-link" href="#portfolioModal4" data-toggle="modal">Média, Moda e Mediana</a></h3><br/>
+            
           </div>
           <div class="col-sm-4 portfolio-item">
             </div>
@@ -274,6 +276,35 @@
         </div>
       </div>
     </div>
+
+    <!--Média, Moda e Mediana -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2>Média, Moda e Mediana</h2><hr />
+                  <input style="margin-bottom: 20px" placeholder="Informe os valores separados por vírgula" maxlength="100" id="idValores" type="text"  class="form-control"/>
+                  
+                    <button class="btn btn-primary calcularMedia" >Calcular</button>
+                  <button class="btn btn-success" type="button" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Voltar</button>
+                    <button  class="btn btn-warning limparMedia">Limpar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
    
     <!-- Bootstrap core JavaScript -->
@@ -290,6 +321,7 @@
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/modaMediaMediana.js"></script>
     <script type="text/javascript" src="js/regressaoLinear.js"></script>
     <script type="text/javascript" src="js/distribuicaoDeFrequencia.js"></script>
     <script type="text/javascript" src="jquery.mask.min.js"></script>
