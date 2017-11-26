@@ -116,8 +116,8 @@ $(function(){
                                 <td class="sF" id="sF"></td>
                                 <td class="sFr" id="sFr"></td>
                                 <td class="sFrPorc" id="sFrPorc"></td>
-                                <td class="sFac" id="sFac"> ----- </td>
-                                <td class="sFad" id="sFad"> ----- </td>
+                                <td class="sFac" id="sFac"> *** </td>
+                                <td class="sFad" id="sFad"> *** </td>
                           </tr>`
               $('.body-table2').append(html)
           }
