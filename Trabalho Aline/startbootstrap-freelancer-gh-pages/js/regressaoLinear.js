@@ -34,6 +34,8 @@
      if($('.campos').length == 0){   
          let qtd = $('.entrada').val()
         if(qtd !== '' && qtd <= 10 && qtd > 0){
+          
+            
              let html = `<tr class="retaAjustada">
                               <th>Xi</th>
                               <th>Yi</th>
@@ -62,6 +64,7 @@
                 </tr>`
             $('.body-table').append(html_1)
         }
+       
     } else {
         alert('Quantidade de coluna inválida')
     }}
@@ -114,6 +117,7 @@
         let yiElement = $('.yi input')
         let xi = Array()
         let yi = Array()
+       
         
         if($('.sXi').length == 0) {
             let html = `<tr class="resultadoSomatorio">
@@ -197,8 +201,16 @@
             $('#x_').html(sX_)
             $('#y_').html(sY_)
             $('#b').html(sB)
-        }
+            
+             let html3 = `<h3 style="margin-top: 20px" class="y">Y = ${Number((contXiYi-(contXi*contYi)) / ((n*contXi2) - (Math.pow(contXi,2)))).toFixed(2)} * X + ${Number(Y_ - A*X_).toFixed(2)} 
+            
+
+            </h3>`
+            $('.tabela1').after(html3)
         
+            }
+            
+           
     })
 })
     
