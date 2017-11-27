@@ -52,7 +52,7 @@ $(function() {
 function gerarColunas(qtd) {
     for( let i = 0; i < qtd; i++){
     let html = ` <tr class="totalEntradas"><td>
-    <input placeholder="x" class="entradaStyle entradaEsquerda"/>----|<input placeholder="y" class="entradaStyle entradaDireita direita"/>
+    <input placeholder="x" class="entradaStyle entradaEsquerda" style="margin-right:2px"/>|----<input style="margin-left:2px" placeholder="y" class="entradaStyle entradaDireita direita"/>
   </td>
 
   <td>
